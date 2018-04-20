@@ -1,0 +1,46 @@
+<template>
+    <div class="pt-3 pb-3 container w-100 pl-0 pr-0 date-switcher">
+        <div class="row ml-0 mr-0">
+
+            <div class="col-2 pl-0 mr-0 text-left">
+                <button type="button" class="icon-button date-switcher-button" v-on:click="shiftDate(-1)">
+                    <span class="fas fa-caret-left fa-2x"></span>
+                </button>
+            </div>
+
+            <div class="col-8 centered">
+                <v-menu ref="calendarDate"
+                        lazy
+                        :close-on-content-click="false"
+                        v-model="calendarMenu"
+                        transition="scale-transition"
+                        offset-y
+                        full-width
+                        :nudge-right="40"
+                        min-width="290px"
+                        :return-value.sync="calendarDate">
+                    <v-text-field v-model="currentDateCaption"
+                                  slot="activator"
+                                  class="calendar-input"
+                                  readonly>
+                    </v-text-field>
+                    <v-date-picker v-model="calendarDate"
+                                   :max="formatForDatePicker(today)"
+                                   @input="$refs.calendarDate.save(calendarDate)">
+
+                    </v-date-picker>
+                </v-menu>
+            </div>
+
+            <div class="col-2 pr-0 mr-0 text-right">
+                <button type="button" class="icon-button date-switcher-button" v-on:click="shiftDate(1)" :disabled="isToday">
+                    <span class="fas fa-caret-right fa-2x"></span>
+                </button>
+            </div>
+
+        </div>
+    </div>
+</template>
+
+<script src="./dateswitcher.ts"></script>
+<style src="./dateswitcher.css"></style>

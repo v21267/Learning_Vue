@@ -1,0 +1,24 @@
+<template v-if="data.type == 'COUNT'">
+    <tr class="activity-row">
+        <td v-bind:style="{backgroundColor: data.color}" class="activity-badge"></td>
+        <td class="activity-count">
+            {{ data.value }}
+        </td>
+        <td class="activity-description">
+            {{ data.description }}
+        </td>
+        <td class="activity-button">
+            <button type="button" class="icon-button full-size">
+                <span class="fas fa-minus fa-lg"></span>
+            </button>
+        </td>
+        <td class="activity-button">
+            <button type="button" class="icon-button full-size">
+                <span class="fas fa-plus fa-lg"></span>
+            </button>
+        </td>
+    </tr>
+</template>
+
+<script src="./activityrow.ts"></script>
+<style src="./activityrow.css"></style>

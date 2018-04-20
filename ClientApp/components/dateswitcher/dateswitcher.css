@@ -1,0 +1,33 @@
+a.current-date
+{
+  font-size: larger;
+}
+
+div.date-switcher
+{
+  background: linear-gradient(#d8d8d8, #ebf5fb);
+  /* lightsteelblue */
+}
+
+button.date-switcher-button
+{
+  width: 40px;
+}
+
+div.calendar-input
+{
+  padding-top: 0;
+}
+
+div.calendar-input input
+{
+  text-align: center;
+  font-size: larger;
+}
+
+div.calendar-input div.input-group__details
+{
+  display: none;
+}
+
+

@@ -1,0 +1,12 @@
+.app
+{
+  max-width: 450px;
+  width: 100%;
+  display: inline-block;
+}
+
+.app-root
+{
+  width: 100%;
+  text-align: center;
+}

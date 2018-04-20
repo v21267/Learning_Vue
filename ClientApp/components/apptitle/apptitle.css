@@ -1,0 +1,32 @@
+nav.navbar
+{
+  background-color: #009ddf;
+  margin-top: 10px;
+}
+
+ul.navbar-nav
+{
+  display: inline-flex;
+  width: 100%;
+}
+
+div.main-menu
+{
+  text-align: center;
+  width: calc(100% - 250px);
+}
+
+div.separator
+{
+  width: 50px;
+}
+
+a.router-link-active,
+li.link-active a,
+li.link-active a:active,
+li.link-active a:hover,
+li.link-active a:visited,
+li a:hover
+{
+  color: white !important;
+}

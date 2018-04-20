@@ -1,0 +1,18 @@
+<template>
+    <div>
+        <dateswitcher></dateswitcher>
+
+        <p v-if="!hasData"><em>Loading...</em></p>
+
+        <table class='table pt-0 activities-table' v-if="hasData">
+            <tbody>
+                <template v-for="data in metricsData" class="activity-row">
+                    <activityrow v-bind:key="data.code" v-bind:data="data"></activityrow>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<script src="./activities.ts"></script>
+<style src="./activities.css"></style>
