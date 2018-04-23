@@ -1,0 +1,21 @@
+div.dashboard
+{
+  border-width: 1px;
+  border-style: solid;
+  border-color: #dee2e6;
+  width: 100%;
+  min-height: 300px;
+  padding-bottom: 10px;
+}
+
+div.chart-container
+{
+  border-bottom: 1px solid #dee2e6;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.nav-item a:hover
+{
+  color: #0056b3 !important;
+}

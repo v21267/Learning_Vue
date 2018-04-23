@@ -2,7 +2,6 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import VenvitoService from '../../venvitoservice';
 
-
 @Component({
 })
 export default class DateSwitcherComponent extends Vue 

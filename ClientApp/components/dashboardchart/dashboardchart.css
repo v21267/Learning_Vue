@@ -1,0 +1,45 @@
+div.chart-container
+{
+  border-bottom: 1px solid #dee2e6 !important;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+}
+
+div.chart-description
+{
+  text-transform: uppercase;
+  color: cadetblue;
+  text-align: left;
+}
+
+div.chart-total
+{
+  text-align: right;
+}
+
+  div.chart-total span.badge
+  {
+    background-color: cadetblue;
+  }
+
+div.chart-height
+{
+  height: 200px;
+}
+
+div.no-data-parent
+{
+  display: table;
+}
+
+div.no-data-child
+{
+  display: table-cell;
+  vertical-align: middle;
+  color: grey;
+}
+
+span.total-badge
+{
+  padding: 8px;
+}

@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.5",
+    "@types/chart.js": "^2.7.14",
     "@types/numeral": "0.0.22",
     "axios": "^0.18.0",
     "bootstrap": "^4.1.0",

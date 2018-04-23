@@ -1,7 +1,38 @@
 <template>
-    <div>
-        <h1>Dashboard</h1>
+    <div class="dashboard">
+        <ul class="nav nav-tabs nav-fill">
+            <li class="nav-item">
+                <a class="nav-link" v-on:click.prevent="setDateRange('7')" v-bind:class="{active: this.dateRange == '7'}" href="#">
+                    Last<br />7 Days
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" v-on:click.prevent="setDateRange('30')" v-bind:class="{active: this.dateRange == '30'}" href="#">
+                    Last<br />30 Days
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" v-on:click.prevent="setDateRange('M')" v-bind:class="{active: this.dateRange == 'M'}" href="#">
+                    This<br />Month
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" v-on:click.prevent="setDateRange('Q')" v-bind:class="{active: this.dateRange == 'Q'}" href="#">
+                    This<br />Quarter
+                </a>
+            </li>
+        </ul>
+
+        <p v-if="!hasCharts"><em>Loading...</em></p>
+
+        <div v-if="hasCharts">
+            <div v-for="chart in charts" class="chart-container">
+                <dashboardchart v-bind:key="chart.code" v-bind:chart="chart"></dashboardchart>
+            </div>
+        </div>
     </div>
+
 </template>
 
 <script src="./dashboard.ts"></script>
+<style src="./dashboard.css"></style>

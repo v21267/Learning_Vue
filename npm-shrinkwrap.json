@@ -17,6 +17,11 @@
       "resolved": "https://registry.npmjs.org/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.1.4.tgz",
       "integrity": "sha512-JEgIoqh9HAQWul8CVLrOmWUI8nUQfCJZygRJ1Cr2H/O3+pCpVszW199cIpc7k7Nr1HJtLD77AUZVnxaKllx7AQ=="
     },
+    "@types/chart.js": {
+      "version": "2.7.14",
+      "resolved": "https://registry.npmjs.org/@types/chart.js/-/chart.js-2.7.14.tgz",
+      "integrity": "sha512-6SwFiPZqmUgvUrc1YeKN2txK1IsbFkXFoUugwj/qf3ltqWXZbFjuILjmnzO7kTTi+Vs0ftwpZbPVb24GBuH59A=="
+    },
     "@types/numeral": {
       "version": "0.0.22",
       "resolved": "https://registry.npmjs.org/@types/numeral/-/numeral-0.0.22.tgz",

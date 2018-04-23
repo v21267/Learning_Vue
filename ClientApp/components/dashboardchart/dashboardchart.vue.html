@@ -1,0 +1,28 @@
+<template>
+    <div class="container w-100">
+        <div class="row  mt-2 mb-2 ml-2 mr-2">
+            <div class="col-8 chart-description pl-0">
+                {{ chart.description }}
+            </div>
+            <div class="col chart-total pr-0">
+                <span class="badge badge-primary total-badge">
+                    {{ formattedTotalValue }}
+                </span>
+            </div>
+        </div>
+        <div class="row" style="display: block;">
+            <div class="col ml-2 chart-height" v-if="hasData">
+                <vuechart 
+                     type="bar"
+                     v-bind:data=barChartData
+                ></vuechart>
+            </div>
+            <div class="col ml-2 chart-height no-data-parent" v-if="!hasData">
+                <div class="no-data-child">No data for this period</div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script src="./dashboardchart.ts"></script>
+<style src="./dashboardchart.css"></style>
