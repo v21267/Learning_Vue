@@ -1,5 +1,5 @@
-<template v-if="data.type == 'COUNT'">
-    <tr class="activity-row">
+<template>
+    <tr class="activity-row" v-if="data.type == 'COUNT'">
         <td v-bind:style="{backgroundColor: data.color}" class="activity-badge"></td>
         <td class="activity-count">
             {{ data.value }}
@@ -8,16 +8,71 @@
             {{ data.description }}
         </td>
         <td class="activity-button">
-            <button type="button" class="icon-button full-size">
+            <button type="button" class="icon-button full-size" v-on:click="updateCount(-1)" :disabled="isZeroCount">
                 <span class="fas fa-minus fa-lg"></span>
             </button>
         </td>
         <td class="activity-button">
-            <button type="button" class="icon-button full-size">
+            <button type="button" class="icon-button full-size" v-on:click="updateCount(1)">
                 <span class="fas fa-plus fa-lg"></span>
             </button>
         </td>
     </tr>
+
+    <tr class="activity-row" v-else-if="data.type == 'AMOUNT'">
+        <td v-bind:style="{backgroundColor: data.color}" class="activity-badge activity-amount"></td>
+        <td colspan="2" class="activity-amount">
+            <div class="activity-amount-description">
+                {{ data.description }}
+            </div>
+            <div class="activity-amount" v-if="!this.inAmountEditing">
+                ${{ this.formattedAmount }}
+            </div>
+            <div class="activity-amount" v-if="this.inAmountEditing">
+                <v-text-field v-model="data.value"
+                              prefix="$"
+                              mask=""
+                              type="number"
+                              min="0" max="999999999"
+                              ref="amountInput"
+                              required>
+
+                </v-text-field>
+<!--
+                <TextField id="amount"
+                            ref={(input) =>
+                    { this.amountInput = input; }}
+                    type="number"
+                    min="0" max="999999999"
+                    defaultValue={this.props.value}
+                    onChange={(event) => this.handleAmountChange(event.target.value)}
+                    required
+                    style={{ height: "38px" }}
+                    >
+                </TextField>
+-->
+            </div>
+        </td>
+
+        <td class="activity-amount-button" colspan="2" v-if="!this.inAmountEditing">
+            <button type="button" class="icon-button full-size" v-on:click="editAmount()">
+                <span>EDIT</span>
+            </button>
+        </td>
+        <template v-if="this.inAmountEditing">
+            <td class="activity-button">
+                <button type="button" class="icon-button full-size" v-on:click="cancelAmountEditing()" style="color: red;">
+                    <span class="fas fa-times fa-lg"></span>
+                </button>
+            </td>
+            <td class="activity-button">
+                <button type="button" class="icon-button full-size" v-on:click="setAmount()" :disabled="isInvalidAmount" v-bind:style="{color: saveAmountButonColor}">
+                    <span class="fas fa-check fa-lg"></span>
+                </button>
+            </td>
+        </template>
+    </tr>
+
 </template>
 
 <script src="./activityrow.ts"></script>

@@ -1,36 +1,39 @@
 tr.activity-row
 {
-  vertical-align: baseline;
+  vertical-align: baseline !important;
 }
 
 td.activity-badge
 {
   max-width: 10px;
   width: 10px;
-  padding: 0;
+  padding: 0 !important;
 }
 
 td.activity-count
 {
-  width: 40px;
-  font-weight: 600;
-  font-size: xx-large;
-  text-align: right;
+  width: 40px !important;
+  font-weight: 600 !important;
+  font-size: xx-large !important;
+  text-align: right !important;
+  padding: 0.75rem !important;
+  padding-top: 1rem !important;
 }
 
 td.activity-description
 {
-  font-weight: 400;
-  text-align: left;
-  vertical-align: bottom;
-  padding-bottom: 18px;
-  padding-left: 0;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  text-align: left !important;
+  vertical-align: bottom !important;
+  padding-bottom: 18px !important;
+  padding-left: 0 !important;
 }
 
 td.activity-button,
 td.activity-amount-button
 {
-  width: 70px;
+  width: 70px !important;
   vertical-align: middle;
   border-left-width: 1px;
   border-left-style: solid;
@@ -41,44 +44,76 @@ td.activity-amount-button
   padding: 0;
 }
 
-  td.activity-button button,
-  td.activity-amount-button button
-  {
-    height: 70px;
-  }
-
-td.activity-amount
+td.activity-button button,
+td.activity-amount-button button
 {
-  text-align: left;
+  height: 70px;
+  width: 70px;
+}
+
+td.activity-button,
+td.activity-amount-button
+{
+  padding: 0 !important;
+  padding-top: 2px !important;
+}
+
+td.activity-button span,
+td.activity-amount-button span
+{
+  font-size: 21px;
 }
 
 td.activity-amount
 {
-  padding-top: 0.375rem;
-  padding-bottom: 0.375rem;
+  text-align: left !important;
+}
+
+td.activity-amount
+{
+  padding-top: 0.375rem !important;
+  padding-bottom: 0.375rem !important;
 }
 
 td.activity-amount-button
 {
-  padding-top: 2px;
-  padding-bottom: 1px;
+  padding-top: 2px !important;
+  padding-bottom: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 div.activity-amount-description
 {
-  font-size: small;
-  color: gray;
-  text-transform: uppercase;
+  font-size: small !important;
+  color: gray !important;
+  text-transform: uppercase !important;
 }
 
 div.activity-amount
 {
-  font-weight: 600;
-  font-size: x-large;
+  font-weight: 600 !important;
+  font-size: x-large !important;
 }
+
+div.activity-amount input
+{
+  font-weight: 600 !important;
+  font-size: x-large !important;
+}
+
+div.activity-amount div.input-group
+{
+  padding: 0 !important;
+}
+
+  div.activity-amount div.input-group__details
+  {
+    display: none !important;
+  }
 
 td.activity-amount-button span
 {
-  font-weight: 600;
-  font-size: large;
+  font-weight: 600 !important;
+  font-size: large !important;
 }
