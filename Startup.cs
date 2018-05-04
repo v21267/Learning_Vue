@@ -13,11 +13,17 @@ namespace Venvito_Vue
   public class Startup
   {
     static public string ConnectionString;
+    static public string MongoConnectionString;
+    static public string MongoDatabase;
+    static public bool UseMongo = false;
 
     public Startup(IConfiguration configuration)
     {
       Configuration = configuration;
       ConnectionString = Configuration.GetConnectionString("DefaultConnection");
+      MongoConnectionString = Configuration.GetConnectionString("MongoConnection");
+      MongoDatabase = Configuration.GetValue<string>("MongoDatabase", "Venvito");
+      UseMongo = Configuration.GetValue<bool>("UseMongo");
     }
 
     public IConfiguration Configuration { get; }

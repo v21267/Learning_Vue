@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Data;
 using System.Data.SqlClient;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Venvito_Vue.Controllers
@@ -63,10 +63,13 @@ namespace Venvito_Vue.Controllers
 
   public class MetricsDefinition
   {
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string _id;
     public string code;
     public string description;
     public string type;
     public string color;
+    public int sortOrder;
   }
 
   public class MetricsChart : MetricsDefinition
