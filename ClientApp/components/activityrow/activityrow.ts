@@ -55,6 +55,8 @@ export default class ActivityRowComponent extends Vue
 
   setAmount()
   {
+    if (this.isInvalidAmount) return;
+
     this.updateMetricsData(this.data);
     this.inAmountEditing = false;
   }

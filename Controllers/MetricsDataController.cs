@@ -5,7 +5,6 @@ using System.Data;
 using System.Data.SqlClient;
 using System.IO;
 using MongoDB.Driver;
-using MongoDB.Bson;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Hosting;
 

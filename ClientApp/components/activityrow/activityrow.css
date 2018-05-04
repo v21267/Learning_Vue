@@ -51,6 +51,11 @@ td.activity-amount-button button
   width: 70px;
 }
 
+td.activity-amount-button button
+{
+  width: 100%;
+}
+
 td.activity-button,
 td.activity-amount-button
 {

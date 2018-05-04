@@ -35,7 +35,10 @@
                               type="number"
                               min="0" max="999999999"
                               ref="amountInput"
-                              required>
+                              required
+                              @keyup.enter.native="setAmount"
+                              @keyup.esc.native="cancelAmountEditing"
+                              >
 
                 </v-text-field>
             </div>
